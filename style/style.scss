@@ -1,0 +1,102 @@
+@import url(null.css);
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Poppins:wght@500;700&display=swap');
+
+body{
+    background-image: url(../src/img/back.jpg);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    h1 {
+        color: #FFF;
+        font-size: 64px;
+        text-align: center;
+    }
+    span {
+        color: #9e9ce9;
+        padding-bottom: 10px;
+        font-size: 32px;
+        animation: sway 2s ease-in-out infinite;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+        }
+    }
+    button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid #000;
+        background-color: inherit;
+        color: #927c7c;
+        border-color: currentColor;
+        font-size: 18px;
+        transition: all .3s ease-in;
+        font-weight: 600;
+        &:hover {
+            color: rgb(255, 255, 255);
+        }
+    }
+    
+}
+
+
+
+.gameboard {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.box {
+    font-family: 'Finger Paint', cursive;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(110, 110, 136);
+    background: inherit;
+    font-size: 100px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+}
+
+.box:nth-child(3n) {
+    border-right: none;
+}
+.box:nth-child(6) ~ .box {
+    border-bottom: none;
+} 
+
+
+@keyframes sway {
+    0% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(-2deg);
+    }
+  }
